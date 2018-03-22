@@ -60,8 +60,8 @@ int* mergeSort(int* orgArry, int startAt, int endAt) {
 
 	int* result = merge(left, middle - startAt, right, endAt - middle);
 
-	delete left;
-	delete right;
+	delete [] left;
+	delete [] right;
 
 	return result;
 }
@@ -132,6 +132,8 @@ int main(int argc, char** argv) {
 	} else {
 		printf("NOT FOUND %d\n", find);
 	}
+
+	delete [] sortedArry;
 
 	return 0;
 }
